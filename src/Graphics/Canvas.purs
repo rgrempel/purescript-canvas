@@ -43,6 +43,7 @@ module Graphics.Canvas
   , setShadowOffsetX
   , setShadowOffsetY
   , setShadowColor
+  , setMiterLimit
 
   , setLineCap
   , setLineJoin
@@ -203,6 +204,9 @@ foreign import setShadowOffsetX :: forall eff. Number -> Context2D -> Eff (canva
 
 -- | Set the current shadow y-offset.
 foreign import setShadowOffsetY :: forall eff. Number -> Context2D -> Eff (canvas :: Canvas | eff) Context2D
+
+-- | Set the current miter limit.
+foreign import setMiterLimit :: forall eff. Number -> Context2D -> Eff (canvas :: Canvas | eff) Context2D
 
 -- | Enumerates the different types of line cap.
 data LineCap = Round | Square | Butt
